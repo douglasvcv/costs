@@ -3,32 +3,28 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 
 import Home from './pages/Home'
 import Contato from './pages/Contato'
-import Empresa from './pages/Empresa'
+
 import NovoProjeto from './pages/NovoProjeto'
+import NavBar from './components/layouts/NavBar'
+import Footer from './components/layouts/Footer'
+import Projetos from './pages/Projetos'
 
 
-import Container from './components/layouts/Container'
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <Router>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/contato'>Contato</Link></li>
-        <li><Link to='/empresa'>Empresa</Link></li>
-        <li><Link to='novoprojeto'>Novo projeto</Link></li>
-      </ul>
+      <NavBar></NavBar>
       <Routes>
-
-
         <Route exact path='/' element={<Home/>}/>
         <Route exact path='/contato' element={<Contato/>}/>
-        <Route exact path='/empresa' element={<Empresa/>}/>
+        <Route exact path='/projetos' element={<Projetos/>}/>
         <Route exact path='/novoprojeto' element={<NovoProjeto/>}/>
-
       </Routes>
+      <Footer></Footer>
     </Router>
   )
 }
